@@ -7,9 +7,9 @@ const Contact = () => {
     return (
         <>
             <Head>
-                <title>Contact | daily.place</title>
-                <meta name="title" content="Contact | daily.place" />
-                <meta name="description" content="Questions, feedback or help about daily.place" />
+                <title>Contact | zen.space</title>
+                <meta name="title" content="Contact | zen.space" />
+                <meta name="description" content="Questions, feedback or help about zen.space" />
             </Head>
             <div>
                 <Title order={3}>Contact</Title>
@@ -28,7 +28,7 @@ const Contact = () => {
 					<Text mt="md">Or you can write us directly to our e-mail:</Text>
 
 					<Flex gap={20} wrap="wrap" align="center">
-						<Anchor href="mailto:daily.place@proton.me">daily.place@proton.me</Anchor>
+						<Anchor href="mailto:joshidarshit2002@gmail.com">joshidarshit2002@gmail.com</Anchor>
 					</Flex>
 				</Stack>
             </div>

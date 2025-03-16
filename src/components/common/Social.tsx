@@ -16,7 +16,7 @@ const Social = () => {
 					rel="noopener noreferrer"
 					href={`https://x.com/intent/tweet
 					?text=Create your perfect space to focus on your daily tasks
-					&url=https://daily.place&hashtags=lofi,pomodoro,todo&via=1dailyplace`}
+					&url=https://zen.space&hashtags=lofi,pomodoro,todo&via=1dailyplace`}
 					color="dark"
 					variant="subtle"
 				>
@@ -28,7 +28,7 @@ const Social = () => {
 				component="a"
 				target="_blank"
 				rel="noopener noreferrer"
-				href="https://github.com/agustinl/daily.place"
+				href="https://github.com/WhoJoshi69/zen.space"
 				variant="subtle"
 			>
 				<IconBrandGithub size={18} />

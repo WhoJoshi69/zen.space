@@ -36,11 +36,11 @@ const Changelog = ({ data }: { data: ChangelogRecord[] }) => {
     return (
         <>
             <Head>
-                <title>Changelog | daily.place</title>
-                <meta name="title" content="Changelog | daily.place" />
+                <title>Changelog | zen.space</title>
+                <meta name="title" content="Changelog | zen.space" />
                 <meta
                     name="description"
-                    content="The latest updates and changes from daily.place"
+                    content="The latest updates and changes from zen.space"
                 />
             </Head>
             <div>

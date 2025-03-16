@@ -10,7 +10,7 @@ export default function BuyMeACoffeeWidget() {
 		script.setAttribute("data-description", "Support me on Buy me a coffee!");
 		script.setAttribute(
 			"data-message",
-			"Thank you for using daily.place. If you found this app useful, please consider buying us a coffee. ☕✨",
+			"Thank you for using zen.space. If you found this app useful, please consider buying us a coffee. ☕✨",
 		);
 		script.setAttribute("data-color", "#FF5F5F");
 		script.setAttribute("data-position", "Right");

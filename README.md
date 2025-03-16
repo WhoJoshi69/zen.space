@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="zen.space" src="https://raw.githubusercontent.com/agustinl/daily.place/main/public/favicon-32x32.png">
+  <img alt="zen.space" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjYmNiY2JjIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMSAxMmE5IDkgMCAxIDEtMTggMGE5IDkgMCAwIDEgMTggMG0tOC4wMjYtNC4wN2EuMzUuMzUgMCAwIDAtLjM4MS40MzRsMS41MTIgNS44NDdIOS40NGEuMzUuMzUgMCAwIDAgMCAuNjk4aDUuMTJhLjM1LjM1IDAgMCAwIC4zMzctLjQzN2wtMS42My02LjI4MmEuMzUuMzUgMCAwIDAtLjI5My0uMjZtLTQuMTEgOS4zMDZjLS4xOTggMC0uMzU1LjEyOC0uMzU1LjI5aC0uMDA2YzAgLjE2NC4xNTcuMjkyLjM1NS4yOTJoNi4yODNjLjE5NyAwIC4zNTUtLjEyOC4zNTUtLjI5MXMtLjE1OC0uMjkxLS4zNTUtLjI5MXptLS42NDYtOC43MjdhLjg3My44NzMgMCAxIDAgMC0xLjc0NWEuODczLjg3MyAwIDAgMCAwIDEuNzQ1bTguNDM2LS44NzJhLjg3My44NzMgMCAxIDEtMS43NDYgMGEuODczLjg3MyAwIDAgMSAxLjc0NiAwIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=">
   <h1>zen.space</h1>
   <p>Create your perfect space to focus on your daily tasks.</p>
 </div>
@@ -67,4 +67,4 @@ This project is licensed under the [MIT License](link-to-license).
 
 ## 📧 Contact
 
-For questions or feedback, reach out to us at daily.place@proton.me
+For questions or feedback, reach out to us at joshidarshit2002@gmail.com

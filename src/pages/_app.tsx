@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <meta
                     property="og:image"
-                    content="https://daily.place/banner-light.jpg"
+                    content="https://i.ytimg.com/vi/EdyMwu6vg5k/maxresdefault.jpg"
                     key="ogImage"
                 />
 
@@ -59,14 +59,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <meta
                     name="twitter:image"
-                    content="https://daily.place/banner-light.jpg"
+                    content="https://i.ytimg.com/vi/EdyMwu6vg5k/maxresdefault.jpg"
                     key="twImage"
                 />
 
-                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-                <link rel="manifest" href="/manifest.json" />
+                <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZjAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMSAxMmE5IDkgMCAxIDEtMTggMGE5IDkgMCAwIDEgMTggMG0tOC4wMjYtNC4wN2EuMzUuMzUgMCAwIDAtLjM4MS40MzRsMS41MTIgNS44NDdIOS40NGEuMzUuMzUgMCAwIDAgMCAuNjk4aDUuMTJhLjM1LjM1IDAgMCAwIC4zMzctLjQzN2wtMS42My02LjI4MmEuMzUuMzUgMCAwIDAtLjI5My0uMjZtLTQuMTEgOS4zMDZjLS4xOTggMC0uMzU1LjEyOC0uMzU1LjI5aC0uMDA2YzAgLjE2NC4xNTcuMjkyLjM1NS4yOTJoNi4yODNjLjE5NyAwIC4zNTUtLjEyOC4zNTUtLjI5MXMtLjE1OC0uMjkxLS4zNTUtLjI5MXptLS42NDYtOC43MjdhLjg3My44NzMgMCAxIDAgMC0xLjc0NWEuODczLjg3MyAwIDAgMCAwIDEuNzQ1bTguNDM2LS44NzJhLjg3My44NzMgMCAxIDEtMS43NDYgMGEuODczLjg3MyAwIDAgMSAxLjc0NiAwIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=" />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
