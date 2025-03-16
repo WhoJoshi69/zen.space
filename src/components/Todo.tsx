@@ -191,7 +191,12 @@ const Todo = ({ name }: { name: string }) => {
                         variant="unstyled"
                         required
                         rightSection={
-                            <Action aria-label="Add task" component="button" type="submit">
+                            <Action 
+                                aria-label="Add task" 
+                                component="button" 
+                                type="submit"
+                                onClick={(e) => e.preventDefault()}
+                            >
                                 <IconPlus size={16} />
                             </Action>
                         }

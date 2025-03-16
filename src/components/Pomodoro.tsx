@@ -179,7 +179,11 @@ const Pomodoro = ({ name, title }: { name: string; title: string }) => {
                 <Title text="Pomodoro">
                     <Flex align="center" gap={10}>
                         <Shortcuts />
-                        <Action aria-label="Pomodoro settings" onClick={() => setOpened(true)}>
+                        <Action
+                            aria-label="Pomodoro settings"
+                            onClick={() => setOpened(true)}
+                            type="button"
+                        >
                             <IconSettings size={18} />
                         </Action>
                     </Flex>

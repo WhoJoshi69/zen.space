@@ -80,9 +80,7 @@ const Tasks = ({ tasks, groups, onTaskCheck, onTaskDelete, onTaskMove, onTaskEdi
 														fz="sm"
 														w="100%"
 														mr={5}
-														style={() => ({
-															wordBreak: "break-all",
-														})}
+														style={{ wordBreak: "break-all" }}
 														c="inherit"
 													>
 														<div

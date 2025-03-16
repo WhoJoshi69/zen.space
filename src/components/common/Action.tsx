@@ -6,13 +6,13 @@ type ActionProps = ActionIconProps & {
 };
 
 const Action = forwardRef<HTMLButtonElement, ActionProps>(
-	({ children, ...props }, ref) => {
+	({ children, variant = "light", size = "sm", radius = "xl", ...props }, ref) => {
 		return (
 			<ActionIcon
 				ref={ref}
-				variant="light"
-				size="sm"
-				radius="xl"
+				variant={variant}
+				size={size}
+				radius={radius}
 				{...props}
 			>
 				{children}
