@@ -14,6 +14,7 @@ import { useForm, isNotEmpty } from '@mantine/form';
 import { useRouter } from 'next/router';
 
 import Button from '@/components/common/Button';
+import Loader from '@/components/common/Loader';
 
 import classes from './global.module.css';
 import { usePlausible } from 'next-plausible';
@@ -35,15 +36,11 @@ const Home = () => {
 
     return (
         <>
-			<Alert variant="light" title="Enjoying your daily places?" w="100%">
+			<Alert variant="light" title="Enjoying your zen space?" w="100%">
 				We love that it's free, but we do have some maintenance costs. <Anchor href="https://buymeacoffee.com/whojoshi" target="_blank">Your contribution</Anchor> would be very helpful!
 			</Alert>
             <Flex w="100%" h="60vh" direction="column" align="center" justify="center">
-                <Image
-                    alt="Daily place logo"
-                    src={dark ? '/logo-dark.svg' : '/logo-light.svg'}
-                    w={120}
-                />
+                <Loader size={120} />
                 <Title m="50px 0 20px">zen.space</Title>
 
                 <Title order={2} mb={20} c="dark.2" ta="center">

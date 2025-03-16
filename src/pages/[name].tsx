@@ -64,7 +64,7 @@ const Place = () => {
             {showAlert && (
                 <Alert
                     variant="light"
-                    title="Enjoying your daily places?"
+                    title="Enjoying your zen space?"
                     mb="xl"
                     w="100%"
                     withCloseButton

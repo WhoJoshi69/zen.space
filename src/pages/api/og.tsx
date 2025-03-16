@@ -1,4 +1,5 @@
 import { ImageResponse } from "@vercel/og";
+import { Loader } from "@mantine/core";
 
 export default function handler(request: any) {
 	try {
@@ -32,13 +33,7 @@ export default function handler(request: any) {
 							justifyItems: "center",
 						}}
 					>
-						<img
-							alt="Daily place"
-							height={200}
-							src="https://daily.place/logo-light.svg"
-							style={{ margin: "0 30px" }}
-							width={232}
-						/>
+						<Loader size={200} />
 					</div>
 					<div
 						style={{

@@ -1,6 +1,6 @@
 .container {
     --uib-size: 100px;
-    --uib-color: var(--mantine-color-blue-4);
+    --uib-color: light-dark(var(--mantine-color-dark-4), var(--mantine-color-gray-2));
     --uib-speed: 2s;
     --uib-bg-opacity: 0.1;
     height: var(--uib-size);

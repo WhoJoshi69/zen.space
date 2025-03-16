@@ -40,7 +40,7 @@ const Places = ({ name }: { name: string }) => {
             </Menu.Target>
 
             <Menu.Dropdown>
-                <Menu.Label>My places</Menu.Label>
+                <Menu.Label>My spaces</Menu.Label>
                 {storage?.split(',')?.map((place: string, index: number) => (
                     <Link
                         href={{

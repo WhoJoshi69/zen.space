@@ -22,13 +22,13 @@ const Footer = () => {
             </Anchor>
 
             <Text fz={12}>
-                built in Argentina by{' '}
+                built in India by{' '}
                 <Anchor
                     c="gray.6"
-                    href="https://twitter.com/agustinlautaro"
+                    href="https://github.com/WhoJoshi69"
                     target="_blank"
                 >
-                    Agustín
+                    Darshit
                 </Anchor>
             </Text>
         </Flex>
