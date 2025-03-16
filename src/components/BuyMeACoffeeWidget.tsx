@@ -6,7 +6,7 @@ export default function BuyMeACoffeeWidget() {
 		const div = document.getElementById("supportByBMC");
 		script.setAttribute("data-name", "BMC-Widget");
 		script.src = "https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
-		script.setAttribute("data-id", "daily.place");
+		script.setAttribute("data-id", "whojoshi");
 		script.setAttribute("data-description", "Support me on Buy me a coffee!");
 		script.setAttribute(
 			"data-message",

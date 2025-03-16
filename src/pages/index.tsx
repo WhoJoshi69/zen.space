@@ -36,7 +36,7 @@ const Home = () => {
     return (
         <>
 			<Alert variant="light" title="Enjoying your daily places?" w="100%">
-				We love that it's free, but we do have some maintenance costs. <Anchor href="http://buymeacoffee.com/daily.place" target="_blank">Your contribution</Anchor> would be very helpful!
+				We love that it's free, but we do have some maintenance costs. <Anchor href="https://buymeacoffee.com/whojoshi" target="_blank">Your contribution</Anchor> would be very helpful!
 			</Alert>
             <Flex w="100%" h="60vh" direction="column" align="center" justify="center">
                 <Image

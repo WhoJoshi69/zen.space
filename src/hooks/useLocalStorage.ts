@@ -7,29 +7,38 @@ export default function useLocalStorage<T>(key: string, initialValue: T): [T, (v
 
     // State to store our value
     // Pass initial state function to useState so logic is only executed once
-    const [storage, setStorage] = useState<T>(initialValue);
-
-    useEffect(() => {
-        setStorage(localStorageAction);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [router.query]);
-
-    const localStorageAction = () => {
+    const [storage, setStorage] = useState<T>(() => {
+        // Move initial value logic into useState initializer function
         if (typeof window === 'undefined') {
             return initialValue;
         }
         try {
-            // Get from local storage by key
             const item = window.localStorage.getItem(key);
-            // Parse stored json or if none return initialValue
             let parse = typeof initialValue !== 'string';
             return item ? (parse ? JSON.parse(item) : item) : initialValue;
         } catch (error) {
-            // If error also return initialValue
             console.log(error);
             return initialValue;
         }
-    };
+    });
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        
+        const handleStorageUpdate = () => {
+            const item = window.localStorage.getItem(key);
+            if (item) {
+                let parse = typeof initialValue !== 'string';
+                setStorage(parse ? JSON.parse(item) : item);
+            }
+        };
+
+        handleStorageUpdate(); // Initial check
+        
+        // Optional: Listen for storage changes
+        window.addEventListener('storage', handleStorageUpdate);
+        return () => window.removeEventListener('storage', handleStorageUpdate);
+    }, [key, router.query]);
 
     // Return a wrapped version of useState's setter function that ...
     // ... persists the new value to localStorage.

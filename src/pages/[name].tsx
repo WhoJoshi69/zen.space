@@ -15,13 +15,12 @@ const Place = () => {
     const [showAlert, setShowAlert] = useState(true);
 
     useEffect(() => {
-        if (!name) return;
+        if (!name || typeof window === 'undefined') return;
 
         const storage = localStorage.getItem('dailyPlaceNames');
 
         if (storage) {
             const found = storage?.split(',').find((element) => element === name);
-
             if (!found) {
                 localStorage.setItem('dailyPlaceNames', storage?.concat(',', name?.toString()));
             }
@@ -72,7 +71,7 @@ const Place = () => {
                     onClose={() => setShowAlert(false)}
                 >
                     We love that it's free, but we do have some maintenance costs.{' '}
-                    <Anchor href="http://buymeacoffee.com/daily.place" target="_blank">
+                    <Anchor href="https://buymeacoffee.com/whojoshi" target="_blank">
                         Your contribution
                     </Anchor>{' '}
                     would be very helpful!

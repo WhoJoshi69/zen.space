@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FeedbackFish } from '@feedback-fish/react'
+import { useState, useEffect } from 'react';
 
 import DateAndTime from '@/components/DateAndTime';
 
@@ -13,7 +14,18 @@ const NavBar = () => {
     const { colorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
     const router = useRouter();
-    const { name } = router.query;
+    const name = router.query?.name || '';
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
+    const logoSrc = dark ? '/logo-dark.svg' : '/logo-light.svg';
 
     return (
         <Grid justify="center" align="center" w="100%" m={0}>
@@ -23,7 +35,7 @@ const NavBar = () => {
                         <Anchor component={Link} href="/" lh={0}>
                             <Image
                                 alt="Daily place logo"
-                                src={dark ? '/logo-dark.svg' : '/logo-light.svg'}
+                                src={logoSrc}
                                 width={20}
                                 height={20}
                             />
