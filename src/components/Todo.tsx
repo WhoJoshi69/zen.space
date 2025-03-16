@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { Stack, Flex, Text, TextInput, Progress, ScrollArea, Tooltip } from '@mantine/core';
+import { Stack, Flex, Text, TextInput, Progress, ScrollArea, Tooltip, Select, Box } from '@mantine/core';
 import { IconSortDescending2, IconPlus } from '@tabler/icons-react';
 
 import useLocalStorage from '@/hooks/useLocalStorage';
@@ -15,6 +15,12 @@ import { usePlausible } from 'next-plausible';
 
 const Todo = ({ name }: { name: string }) => {
     const [storage, setStorage] = useLocalStorage<TaskType[]>(`dailyTodo_${name}`, []);
+    const [groups, setGroups] = useLocalStorage<string[]>(`taskGroups_${name}`, [
+        'Educational',
+        'Entertainment',
+        'Important'
+    ]);
+    const [selectedGroup, setSelectedGroup] = useState<string>('Important');
 
     const [opened, setOpened] = useState(false);
     const [editedTask, setEditedTask] = useState({} as EditedTaskType);
@@ -52,7 +58,8 @@ const Todo = ({ name }: { name: string }) => {
             ...tasks,
             {
                 text: task.current.value,
-                ready: false
+                ready: false,
+                group: selectedGroup
             }
         ];
 		plausible('New+task');
@@ -110,6 +117,15 @@ const Todo = ({ name }: { name: string }) => {
         setStorage([]);
     };
 
+    const handleCreateGroup = (query: string) => {
+        const newGroup = query.trim();
+        if (newGroup && !groups.includes(newGroup)) {
+            setGroups([...groups, newGroup]);
+            return newGroup;
+        }
+        return null;
+    };
+
     return (
         <>
             <Stack w="100%">
@@ -150,10 +166,25 @@ const Todo = ({ name }: { name: string }) => {
                             onTaskDelete={deleteTask}
                             onTaskMove={moveTaskOrder}
                             onTaskEdit={handleEditTaskClick}
+                            groups={groups}
                         />
                     </ScrollArea>
                 </Stack>
                 <form onSubmit={addNewTask}>
+                    <Box mb={10}>
+                        <Select
+                            label="Task Group"
+                            placeholder="Select a group"
+                            data={groups}
+                            value={selectedGroup}
+                            onChange={(value) => setSelectedGroup(value || 'Important')}
+                            getCreateLabel={(query) => `+ Create ${query}`}
+                            onCreate={handleCreateGroup}
+                            searchable
+                            creatable
+                            clearable={false}
+                        />
+                    </Box>
                     <TextInput
                         placeholder="Add new task..."
                         ref={task}

@@ -75,7 +75,7 @@ export const SOUNDS_LIST: Sound[] = [
 	},
 	{
 		cover: "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/3/eminem-miracle-studio.jpg",
-		videoID: "wedNGWk-l0A&list=PLElImqcRddY_8l_8Op18r_k1Ptc-2YZiC",
+		videoID: "sknKPYC2_q4&list=PLElImqcRddY_8l_8Op18r_k1Ptc-2YZiC",
 		title: "Hip Hop",
 		avatar: true,
 	},
