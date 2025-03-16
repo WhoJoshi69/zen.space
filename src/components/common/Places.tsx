@@ -12,7 +12,7 @@ import { usePlausible } from 'next-plausible';
 
 const Places = ({ name }: { name: string }) => {
     const router = useRouter();
-    const [storage, setStorage] = useLocalStorage<string>('dailyPlaceNames', '');
+    const [storage, setStorage] = useLocalStorage<string>('zenSpaceNames', '');
 	const [opened, setOpened] = useState(false);
 	const plausible = usePlausible();
 
@@ -82,7 +82,7 @@ const Places = ({ name }: { name: string }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             href={`https://x.com/intent/tweet
-							?text=${name}'s place by&url=https://daily.place/${name}`}
+							?text=${name}'s place by&url=https://zen.space/${name}`}
                             component="a"
                             leftSection={<IconBrandX size={16} />}
                         >

@@ -6,7 +6,7 @@ export default function handler(request: any) {
 
 		// ?title=<title>
 		const hasTitle = searchParams.has("title");
-		const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "daily.place";
+		const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "zen.space";
 
 		return new ImageResponse(
 			(

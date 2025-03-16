@@ -29,17 +29,17 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <title>daily.place</title>
-                <meta name="title" content="daily.place" />
+                <title>zen.space</title>
+                <meta name="title" content="zen.space" />
                 <meta
                     name="description"
                     content="Create your perfect space to focus on your daily tasks."
                 />
 
-                <meta property="og:site_name" content="Daily place" />
+                <meta property="og:site_name" content="Zen space" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://daily.place/" />
-                <meta property="og:title" content="daily.place" />
+                <meta property="og:url" content="https://zen.space/" />
+                <meta property="og:title" content="zen.space" />
                 <meta
                     property="og:description"
                     content="Create your perfect space to focus on your daily tasks."
@@ -51,8 +51,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:url" content="https://daily.place/" />
-                <meta name="twitter:title" content="daily.place" />
+                <meta name="twitter:url" content="https://zen.space/" />
+                <meta name="twitter:title" content="zen.space" />
                 <meta
                     name="twitter:description"
                     content="Create your perfect space to focus on your daily tasks."
@@ -94,7 +94,7 @@ export default function App({ Component, pageProps }: AppProps) {
                             );
                         }
                     `}</style>
-                    <PlausibleProvider domain="daily.place" taggedEvents={true}>
+                    <PlausibleProvider domain="zen.space" taggedEvents={true}>
                         <Component {...pageProps} />
                     </PlausibleProvider>
                     <Script

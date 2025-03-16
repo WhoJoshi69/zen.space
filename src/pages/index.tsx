@@ -44,7 +44,7 @@ const Home = () => {
                     src={dark ? '/logo-dark.svg' : '/logo-light.svg'}
                     w={120}
                 />
-                <Title m="50px 0 20px">daily.place</Title>
+                <Title m="50px 0 20px">zen.space</Title>
 
                 <Title order={2} mb={20} c="dark.2" ta="center">
                     Create your perfect space to focus on your daily tasks
@@ -63,7 +63,7 @@ const Home = () => {
                         <TextInput
                             placeholder="Name of your space"
                             size="md"
-                            label={`daily.place/${form?.values?.name}`}
+                            label={`zen.space/${form?.values?.name}`}
                             error
                             {...form.getInputProps('name')}
                         />

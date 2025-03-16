@@ -11,21 +11,21 @@ import Todo from '@/components/Todo';
 const Place = () => {
     const router = useRouter();
     const { name } = (router.query as { name: string }) || { name: '' };
-    const title = `${name}'s place | daily.place`;
+    const title = `${name}'s place | zen.space`;
     const [showAlert, setShowAlert] = useState(true);
 
     useEffect(() => {
         if (!name || typeof window === 'undefined') return;
 
-        const storage = localStorage.getItem('dailyPlaceNames');
+        const storage = localStorage.getItem('zenSpaceNames');
 
         if (storage) {
             const found = storage?.split(',').find((element) => element === name);
             if (!found) {
-                localStorage.setItem('dailyPlaceNames', storage?.concat(',', name?.toString()));
+                localStorage.setItem('zenSpaceNames', storage?.concat(',', name?.toString()));
             }
         } else {
-            localStorage.setItem('dailyPlaceNames', name?.toString());
+            localStorage.setItem('zenSpaceNames', name?.toString());
         }
     }, [name]);
 
@@ -37,12 +37,12 @@ const Place = () => {
                 <title>{title}</title>
                 <meta
                     property="og:image"
-                    content={`https://daily.place/api/og?title=${title}`}
+                    content={`https://zen.space/api/og?title=${title}`}
                     key="ogImage"
                 />
                 <meta
                     name="twitter:image"
-                    content={`https://daily.place/api/og?title=${title}`}
+                    content={`https://zen.space/api/og?title=${title}`}
                     key="twImage"
                 />
             </Head>
