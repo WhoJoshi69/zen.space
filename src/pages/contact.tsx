@@ -19,7 +19,7 @@ const Contact = () => {
 						following widget:
 					</Text>
 
-					<FeedbackFish projectId="6a0ab10df6a57f">
+					<FeedbackFish projectId="40d74d04174287">
 						<Badge variant="dot" style={{ cursor: 'pointer' }}>
 							Feedback
 						</Badge>

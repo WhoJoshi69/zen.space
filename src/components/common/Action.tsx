@@ -15,6 +15,14 @@ const _Action = forwardRef<HTMLButtonElement, ActionProps>(({ children, ...other
 		color="gray"
 		ref={ref}
 		{...others}
+		sx={(theme) => ({
+			transition: 'all 0.2s ease',
+			'&:hover': {
+				transform: 'scale(1.1)',
+				opacity: 0.8,
+			},
+			...others.sx
+		})}
 	>
 		{children}
 	</ActionIcon>

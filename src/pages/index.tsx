@@ -12,6 +12,7 @@ import {
 } from '@mantine/core';
 import { useForm, isNotEmpty } from '@mantine/form';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 import Button from '@/components/common/Button';
 import Loader from '@/components/common/Loader';
@@ -24,6 +25,7 @@ const Home = () => {
     const dark = colorScheme === 'dark';
     const router = useRouter();
     const plausible = usePlausible();
+    const [showAlert, setShowAlert] = useState(true);
 
     const form = useForm({
         initialValues: {
@@ -36,9 +38,31 @@ const Home = () => {
 
     return (
         <>
-			<Alert variant="light" title="Enjoying your zen space?" w="100%">
-				We love that it's free, but we do have some maintenance costs. <Anchor href="https://buymeacoffee.com/whojoshi" target="_blank">Your contribution</Anchor> would be very helpful!
-			</Alert>
+            {showAlert && (
+                <Alert 
+                    variant="light" 
+                    title="Enjoying your zen space?" 
+                    w="100%" 
+                    withCloseButton
+                    onClose={() => setShowAlert(false)}
+                >
+                    We love that it's free, but we do have some maintenance costs.{' '}
+                    <Anchor 
+                        href="https://buymeacoffee.com/whojoshi" 
+                        target="_blank"
+                        sx={{
+                            transition: 'all 0.2s ease',
+                            '&:hover': {
+                                textDecoration: 'none',
+                                opacity: 0.8,
+                            }
+                        }}
+                    >
+                        Your contribution
+                    </Anchor>{' '}
+                    would be very helpful!
+                </Alert>
+            )}
             <Flex w="100%" h="60vh" direction="column" align="center" justify="center">
                 <Loader size={120} />
                 <Title m="50px 0 20px">zen.space</Title>
@@ -64,7 +88,17 @@ const Home = () => {
                             error
                             {...form.getInputProps('name')}
                         />
-                        <Button type="submit" size="md">
+                        <Button 
+                            type="submit" 
+                            size="md"
+                            sx={{
+                                transition: 'all 0.2s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                    boxShadow: 'md',
+                                }
+                            }}
+                        >
                             Create
                         </Button>
                     </Flex>
@@ -138,7 +172,7 @@ const Home = () => {
                     <Grid.Col span={{ base: 6, xs: 4 }}>
                         <Text c="dimmed">
                             <span className={classes.spanBold}>Dark mode.</span>
-                            For those who enjoy the night 🦇
+                            For those who enjoy the night
                         </Text>
                     </Grid.Col>
                 </Grid>

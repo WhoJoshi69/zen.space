@@ -34,7 +34,17 @@ const NavBar = () => {
             <Grid.Col span={{ base: 12, sm: 4 }}>
                 <Flex align="center" justify="flex-start" gap="sm">
                     {router?.pathname !== '/' && (
-                        <Anchor component={Link} href="/" lh={0}>
+                        <Anchor 
+                            component={Link} 
+                            href="/" 
+                            lh={0}
+                            sx={{
+                                transition: 'transform 0.2s ease',
+                                '&:hover': {
+                                    transform: 'scale(1.1)',
+                                }
+                            }}
+                        >
                             <Image
                                 alt="Zen Space logo"
                                 src={logoSrc}
@@ -59,7 +69,21 @@ const NavBar = () => {
             <Grid.Col span={{ base: 'auto', sm: 4 }}>
                 <Flex gap="md" justify="flex-end" align="center">
 					<FeedbackFish projectId="6a0ab10df6a57f">
-						<Badge variant="dot" style={{ cursor: 'pointer' }}>Feedback</Badge>
+						<Badge 
+							variant="dot" 
+							style={{ 
+								cursor: 'pointer',
+							}}
+							sx={{
+								transition: 'all 0.2s ease',
+								'&:hover': {
+									transform: 'translateY(-2px)',
+									opacity: 0.8,
+								}
+							}}
+						>
+							Feedback
+						</Badge>
 					</FeedbackFish>
                     <Places name={name as string} />
                     <ThemeToggle />
