@@ -1,7 +1,8 @@
 import { ActionIcon, ActionIconProps } from '@mantine/core';
 import { forwardRef } from 'react';
 
-type ActionProps = ActionIconProps & {
+// Extend ActionIconProps with HTMLButtonElement props to include onClick and type
+type ActionProps = ActionIconProps & React.ComponentPropsWithoutRef<'button'> & {
 	children: React.ReactNode;
 };
 
