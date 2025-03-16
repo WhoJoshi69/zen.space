@@ -1,5 +1,5 @@
 import { Flex, Tooltip } from "@mantine/core";
-import { IconBrandGithub, IconBrandProducthunt, IconBrandX } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandX, IconBrandInstagram } from "@tabler/icons-react";
 
 import Action from "./Action";
 
@@ -38,11 +38,11 @@ const Social = () => {
 				component="a"
 				target="_blank"
 				rel="noopener noreferrer"
-				href="https://www.producthunt.com/products/daily-place"
+				href="https://www.instagram.com/dar_shit_joshi/"
 				variant="subtle"
-				color="orange"
+				color="pink"
 			>
-				<IconBrandProducthunt size={18} />
+				<IconBrandInstagram size={18} />
 			</Action>
 		</Flex>
 	);
