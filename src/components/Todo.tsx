@@ -13,6 +13,8 @@ import EditTask from './modals/EditTask';
 import Tasks from './Tasks';
 import { usePlausible } from 'next-plausible';
 
+type SelectItem = string | { label: string; value: string };
+
 const Todo = ({ name }: { name: string }) => {
     const [storage, setStorage] = useLocalStorage<TaskType[]>(`dailyTodo_${name}`, []);
     const [groups, setGroups] = useLocalStorage<string[]>(`taskGroups_${name}`, [
@@ -175,11 +177,17 @@ const Todo = ({ name }: { name: string }) => {
                         <Select
                             label="Task Group"
                             placeholder="Select a group"
-                            data={groups}
+                            data={groups.map(group => ({ label: group, value: group }))}
                             value={selectedGroup}
                             onChange={(value) => setSelectedGroup(value || 'Important')}
-                            getCreateLabel={(query) => `+ Create ${query}`}
-                            onCreate={handleCreateGroup}
+                            createLabel="+ Create new group"
+                            onCreate={(query) => {
+                                const newGroup = handleCreateGroup(query);
+                                if (newGroup) {
+                                    return { value: newGroup, label: newGroup };
+                                }
+                                return null;
+                            }}
                             searchable
                             creatable
                             clearable={false}
