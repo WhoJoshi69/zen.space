@@ -9,6 +9,7 @@ import DateAndTime from '@/components/DateAndTime';
 
 import Places from '../common/Places';
 import ThemeToggle from '../common/ThemeToggle';
+import Features from '../common/Features';
 
 const NavBar = () => {
     const { colorScheme } = useMantineColorScheme();
@@ -68,24 +69,25 @@ const NavBar = () => {
             </Grid.Col>
             <Grid.Col span={{ base: 'auto', sm: 4 }}>
                 <Flex gap="md" justify="flex-end" align="center">
-					<FeedbackFish projectId="6a0ab10df6a57f">
-						<Badge 
-							variant="dot" 
-							style={{ 
-								cursor: 'pointer',
-							}}
-							sx={{
-								transition: 'all 0.2s ease',
-								'&:hover': {
-									transform: 'translateY(-2px)',
-									opacity: 0.8,
-								}
-							}}
-						>
-							Feedback
-						</Badge>
-					</FeedbackFish>
+                    <FeedbackFish projectId="6a0ab10df6a57f">
+                        <Badge 
+                            variant="dot" 
+                            style={{ 
+                                cursor: 'pointer',
+                            }}
+                            sx={{
+                                transition: 'all 0.2s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                    opacity: 0.8,
+                                }
+                            }}
+                        >
+                            Feedback
+                        </Badge>
+                    </FeedbackFish>
                     <Places name={name as string} />
+                    <Features />
                     <ThemeToggle />
                 </Flex>
             </Grid.Col>

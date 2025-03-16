@@ -28,6 +28,7 @@
 		"datocms-structured-text-to-html-string": "^2.1.11",
 		"embla-carousel-react": "^7.0.9",
 		"eslint-config-next": "14.0.4",
+		"framer-motion": "^12.5.0",
 		"linkify-html": "^4.1.0",
 		"linkifyjs": "^4.1.0",
 		"next": "13.1.6",
