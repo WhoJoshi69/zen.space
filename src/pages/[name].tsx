@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { Alert, Anchor, Flex } from '@mantine/core';
+import { Alert, Anchor, Flex, Container } from '@mantine/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import Playlist from '@/components/Playlist';
-import Pomodoro from '@/components/Pomodoro';
-import Todo from '@/components/Todo';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,11 +13,6 @@ const Place = () => {
     const { name } = (router.query as { name: string }) || { name: '' };
     const title = `${name}'s place | zen.space`;
     const [showAlert, setShowAlert] = useState(true);
-    const [features, _setFeatures] = useLocalStorage('zenSpaceFeatures', {
-        pomodoro: true,
-        analytics: true,
-        music: true
-    });
 
     useEffect(() => {
         if (!name || typeof window === 'undefined') return;
@@ -54,52 +47,12 @@ const Place = () => {
                 />
             </Head>
 
-            <Flex direction="column" justify="space-between" w="100%">
-                <div>
-                    <Flex gap={50} my={50} w="100%" direction={{ base: 'column', sm: 'row' }}>
-                        <AnimatePresence>
-                            {features.pomodoro && (
-                                <motion.div
-                                    initial={{ opacity: 0, width: '0%' }}
-                                    animate={{ opacity: 1, width: '50%' }}
-                                    exit={{ opacity: 0, width: '0%' }}
-                                    transition={{ duration: 0.2 }}
-                                    style={{ 
-                                        overflow: 'hidden',
-                                        display: features.pomodoro ? 'block' : 'none'
-                                    }}
-                                >
-                                    <Pomodoro name={name} title={title} />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                        
-                        <motion.div
-                            animate={{
-                                width: features.pomodoro ? '50%' : '100%'
-                            }}
-                            transition={{ duration: 0.2 }}
-                            style={{ flexGrow: 1 }}
-                        >
-                            <Todo name={name} />
-                        </motion.div>
+            <Flex direction="column" h="100vh">
+                <Container size="lg" px="lg" w="130%">
+                    <Flex w="100%">
+                        <Playlist />
                     </Flex>
-
-                    <AnimatePresence mode="wait">
-                        {features.music && (
-                            <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                            >
-                                <Flex w="100%">
-                                    <Playlist />
-                                </Flex>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </div>
+                </Container>
 
                 <div />
             </Flex>
