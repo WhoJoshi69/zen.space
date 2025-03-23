@@ -70,8 +70,7 @@ export const SOUNDS_LIST: Sound[] = [
 		cover: "https://ik.imagekit.io/dailyplace/lofi_girl.jpg",
 		videoID: "jfKfPfyJRdk",
 		title: "Lofi Girl",
-		avatar: true,
-		url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+		avatar: true
 	},
 	{
 		cover: "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/3/eminem-miracle-studio.jpg",

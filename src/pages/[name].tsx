@@ -57,13 +57,17 @@ const Place = () => {
             <Flex direction="column" justify="space-between" w="100%">
                 <div>
                     <Flex gap={50} my={50} w="100%" direction={{ base: 'column', sm: 'row' }}>
-                        <AnimatePresence mode="wait">
+                        <AnimatePresence>
                             {features.pomodoro && (
                                 <motion.div
-                                    initial={{ opacity: 0, width: 0 }}
+                                    initial={{ opacity: 0, width: '0%' }}
                                     animate={{ opacity: 1, width: '50%' }}
-                                    exit={{ opacity: 0, width: 0 }}
-                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                    exit={{ opacity: 0, width: '0%' }}
+                                    transition={{ duration: 0.2 }}
+                                    style={{ 
+                                        overflow: 'hidden',
+                                        display: features.pomodoro ? 'block' : 'none'
+                                    }}
                                 >
                                     <Pomodoro name={name} title={title} />
                                 </motion.div>
@@ -74,7 +78,7 @@ const Place = () => {
                             animate={{
                                 width: features.pomodoro ? '50%' : '100%'
                             }}
-                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            transition={{ duration: 0.2 }}
                             style={{ flexGrow: 1 }}
                         >
                             <Todo name={name} />
