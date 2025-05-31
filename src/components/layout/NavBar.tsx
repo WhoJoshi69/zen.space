@@ -58,7 +58,7 @@ const NavBar = () => {
             </Grid.Col>
             <Grid.Col span={{ base: 'auto', sm: 4 }}>
                 <Flex gap="md" justify="flex-end" align="center">
-					<FeedbackFish projectId="6a0ab10df6a57f">
+					<FeedbackFish projectId="f8a40614c9bf8f">
 						<Badge variant="dot" style={{ cursor: 'pointer' }}>Feedback</Badge>
 					</FeedbackFish>
                     <Places name={name as string} />
