@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 import { Stack, Flex, Text, TextInput, Progress, ScrollArea, Tooltip } from '@mantine/core';
-import { IconSortDescending2, IconPlus } from '@tabler/icons-react';
+import { IconSortDescending2, IconPlus, IconRefresh } from '@tabler/icons-react';
 
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { TaskType, EditedTaskType } from '@/types/task';
@@ -110,6 +110,12 @@ const Todo = ({ name }: { name: string }) => {
         setStorage([]);
     };
 
+    const untickAllTasks = () => {
+        const temporal_tasks = [...tasks];
+        temporal_tasks.forEach(task => task.ready = false);
+        setStorage(temporal_tasks);
+    };
+
     return (
         <>
             <Stack w="100%">
@@ -127,6 +133,18 @@ const Todo = ({ name }: { name: string }) => {
                                     </Action>
                                 </Tooltip>
                             </>
+                        )}
+                        {progress?.progress > 0 && (
+                            <Tooltip label="Reset all tasks" withArrow>
+                                <Action
+                                    color="orange"
+                                    variant="light"
+                                    aria-label="Reset all tasks"
+                                    onClick={untickAllTasks}
+                                >
+                                    <IconRefresh size={18} />
+                                </Action>
+                            </Tooltip>
                         )}
                     </Flex>
                 </Title>
