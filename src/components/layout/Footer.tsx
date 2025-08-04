@@ -25,7 +25,7 @@ const Footer = () => {
                 built in India by{' '}
                 <Anchor
                     c="gray.6"
-                    href="https://github.com/WhoJoshi69"
+                    href="https://darshit-joshi.vercel.app/"
                     target="_blank"
                 >
                     Darshit
