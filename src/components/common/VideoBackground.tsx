@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 
 const VideoBackground = () => {
-    const [isEnabled, setIsEnabled] = useState(false);
+    const [videoId, setVideoId] = useState('');
 
     useEffect(() => {
-        const saved = localStorage.getItem('zenspace-video-background');
+        const saved = localStorage.getItem('zenspace-video-id');
         if (saved) {
-            setIsEnabled(JSON.parse(saved));
+            setVideoId(saved);
         }
 
         const handleToggle = (event: CustomEvent) => {
-            setIsEnabled(event.detail.enabled);
+            setVideoId(event.detail.videoId);
         };
 
         window.addEventListener('videoBackgroundToggle', handleToggle as EventListener);
@@ -22,7 +22,7 @@ const VideoBackground = () => {
 
     useEffect(() => {
         const body = document.body;
-        if (isEnabled) {
+        if (videoId) {
             body.classList.add('video-background-active');
         } else {
             body.classList.remove('video-background-active');
@@ -31,9 +31,9 @@ const VideoBackground = () => {
         return () => {
             body.classList.remove('video-background-active');
         };
-    }, [isEnabled]);
+    }, [videoId]);
 
-    if (!isEnabled) return null;
+    if (!videoId) return null;
 
     return (
         <div
@@ -48,7 +48,7 @@ const VideoBackground = () => {
             }}
         >
             <iframe
-                src="https://www.youtube.com/embed/iKBs9l8jS6Q?start=28&autoplay=1&mute=1&loop=1&playlist=iKBs9l8jS6Q&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                src={`https://www.youtube.com/embed/${videoId}?start=28&autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1`}
                 style={{
                     position: 'absolute',
                     top: '50%',

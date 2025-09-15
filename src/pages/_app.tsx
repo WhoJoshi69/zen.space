@@ -105,14 +105,14 @@ export default function App({ Component, pageProps }: AppProps) {
                             left: 0;
                             width: 100vw;
                             height: 100vh;
-                            background: rgba(0, 0, 0, 0);
                             z-index: 0;
                         }
 
                         body.video-background-active .main-layout {
                             background: rgba(0, 0, 0, 0);
-                            border-radius: 1px;
-                            backdrop-filter: blur(8px);
+                            border-radius: 12px;
+                            backdrop-filter: blur(13px);
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
                         }
 
                         body.video-background-active .main-layout * {

@@ -12,6 +12,8 @@ import {
 } from '@mantine/core';
 import { useForm, isNotEmpty } from '@mantine/form';
 import { useRouter } from 'next/router';
+import { notifications } from '@mantine/notifications';
+import { IconVideo } from '@tabler/icons-react';
 
 import Button from '@/components/common/Button';
 import Loader from '@/components/common/Loader';
@@ -52,6 +54,13 @@ const Home = () => {
                             props: {
                                 name
                             }
+                        });
+                        notifications.show({
+                            title: 'Welcome to your zen space!',
+                            message: 'Try the awesome video background from the video button in the top right corner',
+                            icon: <IconVideo size={16} />,
+                            color: 'blue',
+                            autoClose: 8000,
                         });
                         router.push(`/${name}`);
                     })}
