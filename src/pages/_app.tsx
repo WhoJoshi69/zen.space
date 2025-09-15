@@ -92,18 +92,29 @@ export default function App({ Component, pageProps }: AppProps) {
                                 var(--mantine-color-black)
                             );
                         }
-                        
+
                         body.video-background-active,
                         body.video-background-active div#__next {
                             background: transparent !important;
                         }
-                        
+
+                        body.video-background-active::before {
+                            content: '';
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100vw;
+                            height: 100vh;
+                            background: rgba(0, 0, 0, 0);
+                            z-index: 0;
+                        }
+
                         body.video-background-active .main-layout {
-                            background: rgba(0, 0, 0, 0.4);
-                            border-radius: 12px;
+                            background: rgba(0, 0, 0, 0);
+                            border-radius: 1px;
                             backdrop-filter: blur(8px);
                         }
-                        
+
                         body.video-background-active .main-layout * {
                             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
                         }
