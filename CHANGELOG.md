@@ -1,5 +1,5 @@
 ## v1.0.0 - Launch
-##### March 17, 2025
+##### Sept 15, 2025
 
 The objective of zen.space is to have within reach of a single page the necessary tools to be able to have a space for concentration.
 Also, timer settings and to-do list are saved to browser storage under the name you choose for your place. As long as you don't clean up your storage or use the incognito app, your settings will be available.

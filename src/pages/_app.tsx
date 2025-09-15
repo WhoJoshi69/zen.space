@@ -12,6 +12,7 @@ import Layout from '@/components/layout/Layout';
 import Script from 'next/script';
 import { Notifications } from '@mantine/notifications';
 import PlausibleProvider from 'next-plausible';
+import VideoBackground from '@/components/common/VideoBackground';
 
 export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
@@ -79,6 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </Head>
             <MantineProvider theme={theme}>
                 <Notifications position="top-center" color="orange" autoClose={60000} />
+                <VideoBackground />
                 <Layout>
                     <style global jsx>{`
                         html,
@@ -89,6 +91,21 @@ export default function App({ Component, pageProps }: AppProps) {
                                 var(--mantine-color-gray-0),
                                 var(--mantine-color-black)
                             );
+                        }
+                        
+                        body.video-background-active,
+                        body.video-background-active div#__next {
+                            background: transparent !important;
+                        }
+                        
+                        body.video-background-active .main-layout {
+                            background: rgba(0, 0, 0, 0.4);
+                            border-radius: 12px;
+                            backdrop-filter: blur(8px);
+                        }
+                        
+                        body.video-background-active .main-layout * {
+                            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
                         }
                     `}</style>
                     <PlausibleProvider domain="zen.space" taggedEvents={true}>

@@ -19,6 +19,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             py={40}
             px={20}
             gap={20}
+            style={{
+                position: 'relative',
+                zIndex: 1,
+            }}
+            className="main-layout"
         >
             <NavBar />
             {children}

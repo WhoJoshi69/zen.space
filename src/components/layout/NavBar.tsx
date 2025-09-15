@@ -9,6 +9,7 @@ import DateAndTime from '@/components/DateAndTime';
 
 import Places from '../common/Places';
 import ThemeToggle from '../common/ThemeToggle';
+import VideoBackgroundToggle from '../common/VideoBackgroundToggle';
 
 const NavBar = () => {
     const { colorScheme } = useMantineColorScheme();
@@ -62,6 +63,7 @@ const NavBar = () => {
 						<Badge variant="dot" style={{ cursor: 'pointer' }}>Feedback</Badge>
 					</FeedbackFish>
                     <Places name={name as string} />
+                    <VideoBackgroundToggle />
                     <ThemeToggle />
                 </Flex>
             </Grid.Col>
