@@ -109,15 +109,17 @@ export default function App({ Component, pageProps }: AppProps) {
                         }
 
                         body.video-background-active .main-layout {
-                            background: rgba(0, 0, 0, 0);
+                            background: rgba(0, 0, 0, 0.3);
                             border-radius: 12px;
-                            backdrop-filter: blur(13px);
+                            backdrop-filter: blur(12px);
                             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
                         }
 
                         body.video-background-active .main-layout * {
                             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
                         }
+
+
                     `}</style>
                     <PlausibleProvider domain="zen.space" taggedEvents={true}>
                         <Component {...pageProps} />
