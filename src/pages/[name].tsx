@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Playlist from '@/components/Playlist';
 import Pomodoro from '@/components/Pomodoro';
 import Todo from '@/components/Todo';
+import ZenModeButton from '@/components/common/ZenModeButton';
 
 const Place = () => {
     const router = useRouter();
@@ -49,6 +50,9 @@ const Place = () => {
 
             <Flex direction="column" justify="space-between" w="100%">
                 <div>
+                    <Flex mb={20} w="100%">
+                        <ZenModeButton />
+                    </Flex>
                     <Flex gap={50} my={50} w="100%" direction={{ base: 'column', sm: 'row' }}>
                         <Pomodoro name={name} title={title} />
                         <Todo name={name} />

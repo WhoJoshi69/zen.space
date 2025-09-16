@@ -45,6 +45,10 @@ const VideoBackgroundToggle = () => {
                 <Menu.Item onClick={() => selectVideo('1Kt8-851Lys')}>I am on top!</Menu.Item>
                 <Menu.Item onClick={() => selectVideo('NmPNsK30IXA')}>Hardcore parkour!</Menu.Item>
                 <Menu.Item onClick={() => selectVideo('wgiRK8_iKdg')}>End Game!</Menu.Item>
+                <Menu.Item onClick={() => selectVideo('mIDlU_sKto0')}>Drive Hard!</Menu.Item>
+                <Menu.Item onClick={() => selectVideo('8b5k0M8wTBg')}>Kung Fu!</Menu.Item>
+                <Menu.Item onClick={() => selectVideo('JXrWPLNp9tw')}>The Window!</Menu.Item>
+                <Menu.Item onClick={() => selectVideo('EdCvwmebWN0')}>Endless!</Menu.Item>
                 <Menu.Divider />
                 <Menu.Item onClick={turnOff} color="red">Turn Off</Menu.Item>
             </Menu.Dropdown>

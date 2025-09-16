@@ -1,7 +1,8 @@
-import { Flex } from '@mantine/core';
+import { Flex, Text } from '@mantine/core';
 import { useState, useEffect } from 'react';
-import { IconEye, IconEyeOff } from '@tabler/icons-react';
+import { IconX } from '@tabler/icons-react';
 import ReactPlayer from 'react-player/youtube';
+import { useRouter } from 'next/router';
 import Action from '../common/Action';
 import Loader from '../common/Loader';
 
@@ -13,6 +14,8 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+    const router = useRouter();
+    const { name } = (router.query as { name: string }) || { name: '' };
     const [isVideoActive, setIsVideoActive] = useState(false);
     const [isOverlayVisible, setIsOverlayVisible] = useState(true);
     const [zenModeMusic, setZenModeMusic] = useState<any>(null);
@@ -25,9 +28,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         checkVideoStatus();
         window.addEventListener('videoBackgroundToggle', checkVideoStatus);
-        
+
+        const handleEnterZenMode = () => {
+            setIsOverlayVisible(false);
+            startZenMusic();
+        };
+
+        window.addEventListener('enterZenMode', handleEnterZenMode);
+
         return () => {
             window.removeEventListener('videoBackgroundToggle', checkVideoStatus);
+            window.removeEventListener('enterZenMode', handleEnterZenMode);
         };
     }, []);
 
@@ -66,13 +77,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     }}
                     aria-label="Show interface"
                 >
-                    <IconEye size={18} />
+                    <IconX size={18} />
                 </Action>
                 <Flex
                     w="100vw"
                     h="100vh"
                     align="center"
                     justify="center"
+                    direction="column"
+                    gap={20}
                     style={{
                         position: 'fixed',
                         top: 0,
@@ -81,6 +94,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     }}
                 >
                     <Loader size={120} />
+                    <Text size="xl" fw={500} c="white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                        Welcome to Darshit's
+                    </Text>
+					<Text size="xl" fw={1000} c="white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                        zen space
+                    </Text>
+					<Text size="xl" fw={500} c="white" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)' }}>
+                        (JUST SIT BACK AND ENJOY)
+                    </Text>
                 </Flex>
             </>
         );
@@ -103,23 +125,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             }}
             className="main-layout"
         >
-            {isVideoActive && (
-                <Action
-                    onClick={() => {
-                        setIsOverlayVisible(false);
-                        startZenMusic();
-                    }}
-                    style={{
-                        position: 'absolute',
-                        top: 10,
-                        right: 10,
-                        zIndex: 10,
-                    }}
-                    aria-label="Hide interface"
-                >
-                    <IconEyeOff size={18} />
-                </Action>
-            )}
+
             <NavBar />
             {children}
             <BuyMeACoffeeWidget />
